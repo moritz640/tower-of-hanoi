@@ -1,8 +1,8 @@
 #################################################################
-# !/bin/bash							#
-# Towers of Hanoi						#
-# v0.1 - 21.12.2013						#
-# Created by Moritz Wenzel (moritz.wenzel@secure-mail.biz)	#
+# !/bin/bash													#
+# Towers of Hanoi												#
+# v0.1 - 21.12.2013												#
+# Created by Moritz Wenzel (moritz.wenzel@secure-mail.biz)		#
 #################################################################
 
 while true
@@ -54,6 +54,7 @@ while true
 						;;
 					3)	exit
 						;;
+
 					*)	echo "Unknown value"
 						;;
 				esac
@@ -76,25 +77,116 @@ while true
 				echo "-A- -B- -C-" 
 				
 				loop2=1
+				loop3=1
 
-				while [ $loop2 == 1 ]
+				while [ $loop2 == 1 -o $loop3 == 1 ]
 					do
 						echo ""
 						read -p "Take Disc of stack(A, B, C): " in2
 						read -p "And put them on stack(A, B, C): " in3
-				
+
+						typeset -i var1
+						loop4=1				
+						var1=0
 						case $in2 in
-							A|a)if [ $a4 -gt 0 ]
-									then
-										
-								
+							A|a)in2=a
 								loop2=0
+								if [ $a1 -eq 0 ]
+									then
+										loop2=1
+										loop4=0
+										echo "The stack is empty, please try again"
+								fi
+								if [ $a4 -ne 0 -a $loop4 == 1 ]
+									then
+										var1=$a4
+										a4=0
+										loop4=0
+								fi
+								if [ $a3 -ne 0 -a $loop4 == 1 ]
+									then
+										var1=$a3
+										a3=0
+										loop4=0
+								fi
+								if [ $a2 -ne 0 -a $loop4 == 1 ]
+									then
+										var1=$a2
+										a2=0
+										loop4=0
+								fi
+								if [ $a1 -ne 0 -a $loop4 == 1 ]
+									then
+										var1=$a1
+										a1=0
+										loop4=0
+								fi
 								;;
 							B|b)in2=b
 								loop2=0
+								if [ $b1 -eq 0 ]
+									then
+										loop2=1
+										loop4=0
+										echo "The stack is empty, please try again"
+								fi
+								if [ $b4 -ne 0 -a $loop4 == 1 ]
+									then
+										var1=$b4
+										b4=0
+										loop4=0
+								fi
+								if [ $b3 -ne 0 -a $loop4 == 1 ]
+									then
+										var1=$b3
+										b3=0
+										loop4=0
+								fi
+								if [ $b2 -ne 0 -a $loop4 == 1 ]
+									then
+										var1=$b2
+										b2=0
+										loop4=0
+								fi
+								if [ $b1 -ne 0 -a $loop4 == 1 ]
+									then
+										var1=$b1
+										b1=0
+										loop4=0
+								fi
 								;;
 							C|c)in2=c
 								loop2=0
+								if [ $c1 -eq 0 ]
+									then
+										loop2=1
+										loop4=0
+										echo "The stack is empty, please try again"
+								fi
+								if [ $c4 -ne 0 -a $loop4 == 1 ]
+									then
+										var1=$c4
+										c4=0
+										loop4=0
+								fi
+								if [ $c3 -ne 0 -a $loop4 == 1 ]
+									then
+										var1=$c3
+										c3=0
+										loop4=0
+								fi
+								if [ $c2 -ne 0 -a $loop4 == 1 ]
+									then
+										var1=$c2
+										c2=0
+										loop4=0
+								fi
+								if [ $c1 -ne 0 -a $loop4 == 1 ]
+									then
+										var1=$c1
+										c1=0
+										loop4=0
+								fi
 								;;
 							*)	echo "Can't understand your first input, please try it again"
 								loop2=1
@@ -103,13 +195,73 @@ while true
 						
 						case $in3 in
 							A|a)in3=a
-								loop2=0
+								loop3=0
+								if [ $a1 -eq 0 -a $loop4 == 0 ]
+									then
+										a1=$var1
+										loop4=1
+								fi
+								if [ $a2 -eq 0 -a $loop4 == 0 ]
+									then										
+										a2=$var1
+										loop4=1
+								fi
+								if [ $a3 -eq 0 -a $loop4 == 0 ]
+									then
+										a3=$var1
+										loop4=1
+								fi
+								if [ $a4 -eq 0 -a $loop4 == 0 ]
+									then										
+										a4=$var1
+										loop4=1
+								fi
 								;;
 							B|b)in3=b
-								loop2=0
+								loop3=0
+								if [ $b1 -eq 0 -a $loop4 == 0 ]
+									then
+										b1=$var1
+										loop4=1
+								fi
+								if [ $b2 -eq 0 -a $loop4 == 0 ]
+									then										
+										b2=$var1
+										loop4=1
+								fi
+								if [ $b3 -eq 0 -a $loop4 == 0 ]
+									then
+										b3=$var1
+										loop4=1
+								fi
+								if [ $b4 -eq 0 -a $loop4 == 0 ]
+									then										
+										b4=$var1
+										loop4=1
+								fi
 								;;
 							C|c)in3=c
-								loop2=0
+								loop3=0
+								if [ $c1 -eq 0 -a $loop4 == 0 ]
+									then
+										c1=$var1
+										loop4=1
+								fi
+								if [ $c2 -eq 0 -a $loop4 == 0 ]
+									then										
+										c2=$var1
+										loop4=1
+								fi
+								if [ $c3 -eq 0 -a $loop4 == 0 ]
+									then
+										c3=$var1
+										loop4=1
+								fi
+								if [ $c4 -eq 0 -a $loop4 == 0 ]
+									then										
+										c4=$var1
+										loop4=1
+								fi
 								;;
 							*)	echo "Can't understand your second input, please try it again"
 								loop2=1
@@ -121,7 +273,9 @@ while true
 								echo "You can't put the disc on the same stack! That would not make sense."
 								loop2=1
 						fi
+
+						c0=$c1+$c2+$c3+$c4
 					done
-				
 			done
+		echo 
 	done
