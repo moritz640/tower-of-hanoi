@@ -291,10 +291,10 @@ while true
 							echo "" >> towers-hanoi-score.txt
 							score1=0
 							;;
-						n|N)	echo "Have a nice day!"
+					n|N)		echo "Have a nice day!"
 							exit
 							;;
-				  		*)	echo "I can't undestand you, please try it again"
+				  	*)		echo "I can't undestand you, please try it again"
 							;;
 				esac
 			done
