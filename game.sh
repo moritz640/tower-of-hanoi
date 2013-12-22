@@ -54,7 +54,6 @@ while true
 						;;
 					3)	exit
 						;;
-
 					*)	echo "Unknown value"
 						;;
 				esac
