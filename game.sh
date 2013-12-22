@@ -1,8 +1,8 @@
 #################################################################
-# !/bin/bash													#
-# Towers of Hanoi												#
-# v0.1 - 21.12.2013												#
-# Created by Moritz Wenzel (moritz.wenzel@secure-mail.biz)		#
+# !/bin/bash							#
+# Towers of Hanoi						#
+# v0.1 - 21.12.2013						#
+# Created by Moritz Wenzel (moritz.wenzel@secure-mail.biz)	#
 #################################################################
 
 while true
