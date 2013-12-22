@@ -286,16 +286,16 @@ while true
 		
 				case $in4 in
 					y|Y|j|J)	read -p "Please enter your name: " name1
-								date >> towers-hanoi-score.txt
-								echo ${name1}" solved the game in "${count1}" moves!" >> towers-hanoi-score.txt
-								echo "" >> towers-hanoi-score.txt
-								score1=0
-								;;
+							date >> towers-hanoi-score.txt
+							echo ${name1}" solved the game in "${count1}" moves!" >> towers-hanoi-score.txt
+							echo "" >> towers-hanoi-score.txt
+							score1=0
+							;;
 						n|N)	echo "Have a nice day!"
-								exit
-								;;
-				  		*)		echo "I can't undestand you, please try it again"
-								;;
+							exit
+							;;
+				  		*)	echo "I can't undestand you, please try it again"
+							;;
 				esac
 			done
 	done
