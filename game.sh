@@ -123,6 +123,6 @@ while true
 								loop2=1
 						fi
 					done
-					
+				
 			done
 	done
